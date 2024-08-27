@@ -23,7 +23,7 @@
             <h1>Unlimited movies, TV shows and more.</h1>
             <h3>Watch anywhere. Cancel anytime.</h3>
             <p>Ready to watch? Enter your email to create or restart your membership.</p>
-            <form action="#" class="email-signup">
+            <form class="email-signup" onsubmit="redirectToPage(event)">
                 <input type="email" placeholder="Email address" required>
                 <button type="submit">Get Started</button>
             </form>
@@ -69,8 +69,6 @@
         </div>
     </div>
 
-
-  
     <div class="faq">
         <h2>Frequently Asked Questions</h2>
 
@@ -122,10 +120,9 @@
             </li>
         </ul>
         
-        <small>Ready to watch? Enter your email to create or restart your membership.
-        </small>
+        <small>Ready to watch? Enter your email to create or restart your membership.</small>
         
-        <form action="#" class="email-signup">
+        <form class="email-signup" onsubmit="redirectToPage(event)">
             <input type="email" placeholder="Email address" required>
             <button type="submit">Get Started</button>
         </form>  
@@ -165,5 +162,14 @@
         <p class="copyright-text">Netflix India</p>
     </div>
 
+    <script>
+        function redirectToPage(event) {
+            event.preventDefault(); // Prevent the form from submitting in the default way
+            const email = document.querySelector('.email-signup input[type="email"]').value;
+
+            // Redirect to your page (you can add a query string with the email if needed)
+            window.location.href = "home.html"; // Replace with your target page URL
+        }
+    </script>
 </body>
 </html>
